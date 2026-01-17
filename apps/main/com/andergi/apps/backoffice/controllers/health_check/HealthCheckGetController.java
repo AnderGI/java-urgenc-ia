@@ -1,4 +1,4 @@
-package com.andergi.apps.backoffice.controllers.healthcheck;
+package com.andergi.apps.backoffice.controllers.health_check;
 
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;

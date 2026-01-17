@@ -1,4 +1,4 @@
-package com.andergi.apps.backoffice.controllers.healthcheck;
+package com.andergi.apps.backoffice.controllers.health_check;
 
 import com.andergi.apps.RequestTestCase;
 import org.junit.jupiter.api.Test;
