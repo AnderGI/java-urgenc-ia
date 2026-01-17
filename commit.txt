@@ -1,3 +1,4 @@
-feat(backoffice/product/register-product): controller and acceptance test added
+refactorfeat(backoffice/product/register-product): register product controller refactoring
 
-ProductPutControllerShould class asserts that the put request is going against the products resource. It only tests the request path, request json body (and its parsing) and the 202 Accepted status code.
+- ProductPutRequest record created instead of plain java class for parsing the request body into an inmutable dataclass
+- Moved ProductPutRequest into its own separate class file
