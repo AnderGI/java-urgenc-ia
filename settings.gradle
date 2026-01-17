@@ -1,0 +1,4 @@
+rootProject.name = 'java-urgenc-ia'
+
+include ':backoffice'
+project(':backoffice').projectDir = file('src/backoffice')
