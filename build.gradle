@@ -94,3 +94,7 @@ bootJar {
     archiveVersion.set('0.0.1')
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 }
+
+dependencies {
+    implementation project(":backoffice")
+}
