@@ -1,4 +1,0 @@
-refactorfeat(backoffice/product/register-product): register product controller refactoring
-
-- ProductPutRequest record created instead of plain java class for parsing the request body into an inmutable dataclass
-- Moved ProductPutRequest into its own separate class file
