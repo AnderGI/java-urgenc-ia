@@ -5,6 +5,7 @@ import com.andergi.backoffice.product.domain.ProductRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
+import java.util.Optional;
 
 // TODO change to a custom service annotation to contain vendor logic in one place only
 @Service
@@ -14,5 +15,10 @@ public final class InMemoryProductRepository implements ProductRepository {
     @Override
     public void save(Product product) {
         products.put(product.id(), product);
+    }
+
+    @Override
+    public Optional<Product> search(String id) {
+        return Optional.ofNullable(products.get(id));
     }
 }
