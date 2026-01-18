@@ -3,16 +3,16 @@ package com.andergi.backoffice.product.domain;
 import java.util.Objects;
 
 public final class Product {
-    private final String id;
+    private final ProductId id;
     private final String name;
 
     public Product(final String id, final String name) {
-        this.id = id;
+        this.id = new ProductId(id);
         this.name = name;
     }
 
     public String id() {
-        return id;
+        return id.value();
     }
 
     public String name() {

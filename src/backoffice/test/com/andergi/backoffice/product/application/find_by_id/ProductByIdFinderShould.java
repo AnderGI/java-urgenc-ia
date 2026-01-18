@@ -14,7 +14,7 @@ final class ProductByIdFinderShould {
 
     @Test
     void find_an_existing_product() throws Exception {
-        Product product = new Product("fake-id", "fake-name");
+        Product product = new Product("740bc869-ecb9-4cbf-9f22-e81b229c6c0f", "fake-name");
         ProductRepository repository = Mockito.mock(ProductRepository.class);
         ProductByIdFinder finder = new ProductByIdFinder(repository);
 
@@ -30,7 +30,7 @@ final class ProductByIdFinderShould {
 
     @Test
     void throw_an_exception_when_finding_non_existing_product() {
-        Product product = new Product("fake-id", "fake-name");
+        Product product = new Product("740bc869-ecb9-4cbf-9f22-e81b229c6c0f", "fake-name");
         ProductRepository repository = Mockito.mock(ProductRepository.class);
         ProductByIdFinder finder = new ProductByIdFinder(repository);
 

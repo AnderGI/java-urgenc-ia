@@ -10,7 +10,7 @@ final class ProductRegistererShould {
 
     @Test
     void register_a_valid_product() {
-        Product product = new Product("fake-id", "fake-name");
+        Product product = new Product("a7a04462-ca83-40a1-be88-3646c8e931b9", "fake-name");
         ProductRepository productRepository = mock(ProductRepository.class);
         ProductRegisterer registerer = new ProductRegisterer(productRepository);
 

@@ -11,12 +11,12 @@ final class InMemoryProductRepositoryShould {
     @Test
     void register_a_valid_product() {
         final InMemoryProductRepository repository = new InMemoryProductRepository();
-        repository.save(new Product("fake-id", "fake-name"));
+        repository.save(new Product("c599b098-b4b3-4922-9696-d198bc5ecacc", "fake-name"));
     }
 
     @Test
     void find_an_existing_product() {
-        final Product product = new Product("fake-id-2", "fake-name");
+        final Product product = new Product("5b56fa6d-ff4a-42d8-af9a-e195dcedb573", "fake-name");
         final InMemoryProductRepository repository = new InMemoryProductRepository();
 
         repository.save(product);
@@ -29,7 +29,7 @@ final class InMemoryProductRepositoryShould {
 
     @Test
     void not_find_a_non_existing_product() {
-        final Product product = new Product("fake-id-2", "fake-name");
+        final Product product = new Product("5b56fa6d-ff4a-42d8-af9a-e195dcedb573", "fake-name");
         final InMemoryProductRepository repository = new InMemoryProductRepository();
 
         Optional<Product> expected = repository.search(product.id());
