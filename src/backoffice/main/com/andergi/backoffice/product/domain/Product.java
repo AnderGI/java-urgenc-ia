@@ -4,11 +4,11 @@ import java.util.Objects;
 
 public final class Product {
     private final ProductId id;
-    private final String name;
+    private final ProductName name;
 
     public Product(final String id, final String name) {
         this.id = new ProductId(id);
-        this.name = name;
+        this.name = new ProductName(name);
     }
 
     public String id() {
@@ -16,7 +16,7 @@ public final class Product {
     }
 
     public String name() {
-        return name;
+        return name.value();
     }
 
     @Override
