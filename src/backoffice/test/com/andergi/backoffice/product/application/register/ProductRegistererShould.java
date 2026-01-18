@@ -1,4 +1,4 @@
-package com.andergi.backoffice.product.application;
+package com.andergi.backoffice.product.application.register;
 
 import com.andergi.backoffice.product.domain.Product;
 import com.andergi.backoffice.product.domain.ProductRepository;
@@ -14,7 +14,7 @@ final class ProductRegistererShould {
         ProductRepository productRepository = mock(ProductRepository.class);
         ProductRegisterer registerer = new ProductRegisterer(productRepository);
 
-        registerer.register(product.id(), product.name());
+        registerer.register(new RegisterProductCommand(product.id(), product.name()));
 
         verify(productRepository, atLeastOnce()).save(product);
 

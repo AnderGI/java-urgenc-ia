@@ -6,7 +6,7 @@ public final class Product {
     private final String id;
     private final String name;
 
-    public Product(String id, String name) {
+    public Product(final String id, final String name) {
         this.id = id;
         this.name = name;
     }

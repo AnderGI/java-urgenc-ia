@@ -13,12 +13,12 @@ public final class InMemoryProductRepository implements ProductRepository {
     private HashMap<String, Product> products = new HashMap<>();
 
     @Override
-    public void save(Product product) {
+    public void save(final Product product) {
         products.put(product.id(), product);
     }
 
     @Override
-    public Optional<Product> search(String id) {
+    public Optional<Product> search(final String id) {
         return Optional.ofNullable(products.get(id));
     }
 }

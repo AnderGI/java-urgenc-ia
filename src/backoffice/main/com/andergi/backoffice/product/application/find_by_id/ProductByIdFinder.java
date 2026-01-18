@@ -15,8 +15,8 @@ public class ProductByIdFinder {
         this.repository = repository;
     }
 
-    public Product run(final String id) throws Exception {
-        Optional<Product> searched = this.repository.search(id);
+    public Product run(final FindProductByIdQuery query) throws Exception {
+        Optional<Product> searched = this.repository.search(query.id());
 
         if(searched.isEmpty()) {
             throw new Exception("No product found");

@@ -19,7 +19,7 @@ final class ProductByIdFinderShould {
         ProductByIdFinder finder = new ProductByIdFinder(repository);
 
         when(repository.search(product.id())).thenReturn(Optional.of(product));
-        Product expected = finder.run(product.id());
+        Product expected = finder.run(new FindProductByIdQuery(product.id()));
 
         verify(repository, atLeastOnce()).search(product.id());
         assertNotNull(expected);
@@ -36,7 +36,7 @@ final class ProductByIdFinderShould {
 
         when(repository.search(product.id())).thenReturn(Optional.empty());
 
-        assertThrows(Exception.class, () -> { finder.run(product.id());});
+        assertThrows(Exception.class, () -> { finder.run(new FindProductByIdQuery(product.id()));});
 
     }
 

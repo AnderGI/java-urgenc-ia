@@ -20,18 +20,18 @@ public abstract class RequestTestCase {
     @Autowired
     private MockMvc mockMvc;
 
-    protected void assertResponseWithNoBody(String endpoint, Integer expectedStatusCode) throws Exception {
+    protected void assertResponseWithNoBody(final String endpoint, final Integer expectedStatusCode) throws Exception {
         mockMvc.perform(get(endpoint)).andExpect(status().is(expectedStatusCode)).andExpect(content().string(""));
     }
 
-    protected void assertResponseWithBody(String endpoint, Integer expectedStatusCode, String body) throws Exception {
+    protected void assertResponseWithBody(final String endpoint, final Integer expectedStatusCode,final String body) throws Exception {
         mockMvc
                 .perform(get(endpoint))
                 .andExpect(status().is(expectedStatusCode))
                 .andExpect(content().json(body, JsonCompareMode.STRICT));
     }
 
-    protected void assertRequestWithBody(String method, String endpoint, String body, Integer expectedStatusCode)
+    protected void assertRequestWithBody(final String method, final String endpoint, final String body, final Integer expectedStatusCode)
             throws Exception {
         mockMvc
                 .perform(request(HttpMethod.valueOf(method), endpoint).content(body).contentType(APPLICATION_JSON))

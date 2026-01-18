@@ -1,7 +1,8 @@
 package com.andergi.apps.backoffice.controllers.product.register_product;
 
 
-import com.andergi.backoffice.product.application.ProductRegisterer;
+import com.andergi.backoffice.product.application.register.ProductRegisterer;
+import com.andergi.backoffice.product.application.register.RegisterProductCommand;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,8 +20,8 @@ final public class ProductPutController {
     }
 
     @PutMapping(path = "/products/{id}")
-    public ResponseEntity run(@PathVariable String id, @RequestBody ProductPutRequest productPutRequest) {
-        registerer.register(id, productPutRequest.name());
+    public ResponseEntity run(@PathVariable final String id, @RequestBody final ProductPutRequest productPutRequest) {
+        registerer.register(new RegisterProductCommand(id, productPutRequest.name()));
         return new ResponseEntity(HttpStatus.ACCEPTED);
     }
 }

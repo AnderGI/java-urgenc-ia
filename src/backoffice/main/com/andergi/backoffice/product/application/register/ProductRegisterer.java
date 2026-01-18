@@ -1,4 +1,4 @@
-package com.andergi.backoffice.product.application;
+package com.andergi.backoffice.product.application.register;
 
 import com.andergi.backoffice.product.domain.Product;
 import com.andergi.backoffice.product.domain.ProductRepository;
@@ -14,8 +14,8 @@ final public class ProductRegisterer {
         this.repository = repository;
     }
 
-    public void register(String id, String name) {
-        Product product = new Product(id, name);
+    public void register(final RegisterProductCommand command) {
+        Product product = new Product(command.id(), command.name());
         this.repository.save(product);
     }
 
