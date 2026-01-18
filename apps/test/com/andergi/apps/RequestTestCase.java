@@ -3,6 +3,7 @@ package com.andergi.apps;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.webmvc.test.autoconfigure.AutoConfigureMockMvc;
+import org.springframework.test.json.JsonCompareMode;
 import org.springframework.test.web.servlet.MockMvc;
 import static org.springframework.http.MediaType.APPLICATION_JSON;
 import org.springframework.http.HttpMethod;
@@ -27,7 +28,7 @@ public abstract class RequestTestCase {
         mockMvc
                 .perform(get(endpoint))
                 .andExpect(status().is(expectedStatusCode))
-                .andExpect(content().json(body));
+                .andExpect(content().json(body, JsonCompareMode.STRICT));
     }
 
     protected void assertRequestWithBody(String method, String endpoint, String body, Integer expectedStatusCode)
