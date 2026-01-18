@@ -24,7 +24,6 @@ class ProductByIdGetControllerShould extends RequestTestCase {
                 HttpStatus.OK.value(),
                 """
                     {
-                        "id": "020d0409-8def-4fdb-995a-0cecae599389",
                         "name": "some-product-name"
                     }
                     """
