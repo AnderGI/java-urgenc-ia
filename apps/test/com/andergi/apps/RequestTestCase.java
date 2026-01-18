@@ -23,6 +23,13 @@ public abstract class RequestTestCase {
         mockMvc.perform(get(endpoint)).andExpect(status().is(expectedStatusCode)).andExpect(content().string(""));
     }
 
+    protected void assertResponseWithBody(String endpoint, Integer expectedStatusCode, String body) throws Exception {
+        mockMvc
+                .perform(get(endpoint))
+                .andExpect(status().is(expectedStatusCode))
+                .andExpect(content().json(body));
+    }
+
     protected void assertRequestWithBody(String method, String endpoint, String body, Integer expectedStatusCode)
             throws Exception {
         mockMvc
