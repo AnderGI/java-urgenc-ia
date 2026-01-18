@@ -23,7 +23,6 @@ public class ProductByIdGetController {
         try {
             final Product product = finder.run(id);
             final HashMap<String, String> response = new HashMap<>();
-            response.put("id", product.id());
             response.put("name", product.name());
             return ResponseEntity.ok().body(response);
         } catch (Exception exp) {
