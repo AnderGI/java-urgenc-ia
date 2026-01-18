@@ -2,9 +2,8 @@ package com.andergi.backoffice.product.application.register;
 
 import com.andergi.backoffice.product.domain.Product;
 import com.andergi.backoffice.product.domain.ProductRepository;
-import org.springframework.stereotype.Service;
+import com.andergi.shared.domain.Service;
 
-// TODO change to a custom service annotation to contain vendor logic in one place only
 @Service
 final public class ProductRegisterer {
 

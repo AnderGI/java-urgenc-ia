@@ -2,3 +2,6 @@ rootProject.name = 'java-urgenc-ia'
 
 include ':backoffice'
 project(':backoffice').projectDir = file('src/backoffice')
+
+include ':shared'
+project(':shared').projectDir = file('src/shared')

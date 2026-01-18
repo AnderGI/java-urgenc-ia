@@ -1,6 +1,7 @@
 package com.andergi.apps.backoffice.controllers.product.get_product_by_id;
 
 import com.andergi.apps.RequestTestCase;
+import com.andergi.shared.domain.Service;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.HttpStatus;
 

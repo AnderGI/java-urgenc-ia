@@ -2,7 +2,7 @@ package com.andergi.backoffice.product.application.find_by_id;
 
 import com.andergi.backoffice.product.domain.Product;
 import com.andergi.backoffice.product.domain.ProductRepository;
-import org.springframework.stereotype.Service;
+import com.andergi.shared.domain.Service;
 
 import java.util.Optional;
 

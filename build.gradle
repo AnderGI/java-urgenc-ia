@@ -66,6 +66,12 @@ subprojects {
         }
     }
 
+    dependencies {
+        if (project.name != "shared") {
+            implementation project(":shared")
+        }
+    }
+
     bootJar {
         enabled = false
     }
@@ -96,5 +102,6 @@ bootJar {
 }
 
 dependencies {
+    implementation project(":shared")
     implementation project(":backoffice")
 }
